@@ -4,11 +4,10 @@ package br.com.order.application.usecase.order;
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.mapper.OrderInputOutputMapper;
 import br.com.order.application.usecase.UseCase;
-import br.com.order.domain.gateway.OrderGateway;
 import br.com.order.domain.core.domain.Order;
-import org.springframework.stereotype.Service;
-
+import br.com.order.domain.gateway.OrderGateway;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 

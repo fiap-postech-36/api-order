@@ -1,7 +1,5 @@
 package br.com.order.application.facade;
 
-
-
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.mapper.OrderInputOutputMapper;

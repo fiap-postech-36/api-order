@@ -42,10 +42,10 @@ public class Order implements Serializable {
         this.receivedAt = LocalDateTime.now();
     }
 
-//    public BigDecimal calculateTotal() {
-//        return this.products.stream()
-//                .map(Product::getPrice)
-//                .reduce(BigDecimal.ZERO, BigDecimal::add);
-//    }
+    public BigDecimal calculateTotal() {
+        return this.products.stream()
+                .map(Product::getPrice)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
 
 }

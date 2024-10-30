@@ -15,20 +15,19 @@ import java.util.stream.Collectors;
 public interface OrderInputOutputMapper {
     OrderInputOutputMapper INSTANCE = Mappers.getMapper(OrderInputOutputMapper.class);
 
-    //@Mapping(source = "products", target = "products", qualifiedByName = "mapProductsItemsToProducts")
-   // @Mapping(target = "products", ignore = true) // Ignorando o mapeamento da propriedade products
+    @Mapping(source = "products", target = "products", qualifiedByName = "mapProductsItemsToProducts")
     Order orderRequestToOrder(final OrderInput orderInput);
 
- //   @Mapping(source = "products", target = "items")
+    @Mapping(source = "products", target = "items")
     OrderOutput orderToOrderResponse(final Order order);
 
-//    @Named("mapProductsItemsToProducts")
-//    default List<Product> mapProductIdToProductItems(final List<Long> productsId) {
-//        return productsId.stream().map(this::mapProductIdToProductItem).collect(Collectors.toList());
-//    }
+    @Named("mapProductsItemsToProducts")
+    default List<Product> mapProductIdToProductItems(final List<Long> productsId) {
+        return productsId.stream().map(this::mapProductIdToProductItem).collect(Collectors.toList());
+    }
 
-//    default Product mapProductIdToProductItem(final Long id) {
-//        return new Product(id, null, null, null, null, null);
-//    }
+    default Product mapProductIdToProductItem(final Long id) {
+        return new Product(id, null, null, null, null, null);
+    }
 
 }
