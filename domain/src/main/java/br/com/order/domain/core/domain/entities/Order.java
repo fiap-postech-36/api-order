@@ -1,4 +1,5 @@
-package br.com.order.domain.core.domain;
+package br.com.order.domain.core.domain.entities;
+
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -9,7 +10,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-
 @Getter
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -41,11 +41,10 @@ public class Order implements Serializable {
         this.status = this.status.getNext();
         this.receivedAt = LocalDateTime.now();
     }
-
     public BigDecimal calculateTotal() {
         return this.products.stream()
-                .map(Product::getPrice)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+            .map(Product::getPrice)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
 }

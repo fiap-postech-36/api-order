@@ -1,4 +1,0 @@
-package br.com.nomeempresa.restaurante.application.infra;
-
-public class CustomExceptionHandlerTest {
-}
