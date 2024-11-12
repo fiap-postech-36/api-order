@@ -1,7 +1,8 @@
 package br.com.order.domain.gateway;
 
-import br.com.order.domain.core.domain.Category;
-import br.com.order.domain.core.domain.Product;
+
+import br.com.order.domain.core.domain.entities.Category;
+import br.com.order.domain.core.domain.entities.Product;
 
 import java.util.Collection;
 import java.util.Optional;
