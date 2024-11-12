@@ -1,4 +1,4 @@
-package br.com.nomeempresa.restaurante.domain.application;
+package br.com.order.domain.application;
 
 import static org.junit.Assert.assertTrue;
 

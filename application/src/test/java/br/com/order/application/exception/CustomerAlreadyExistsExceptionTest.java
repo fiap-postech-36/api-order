@@ -25,4 +25,16 @@ class CustomerAlreadyExistsExceptionTest {
 
         assertEquals(errorMessage, exception.getMessage());
     }
+
+    @Test
+    void shouldReturnCorrectMessageWhenExceptionIsThrown() {
+        // Arrange
+        String expectedMessage = "Customer already exists";
+
+        // Act
+        CustomerAlreadyExistsException exception = new CustomerAlreadyExistsException(expectedMessage);
+
+        // Assert
+        assertEquals(expectedMessage, exception.getMessage());
+    }
 }
