@@ -1,7 +1,7 @@
 package br.com.order.application.usecase.order;
 
 import br.com.order.application.usecase.UseCase;
-import br.com.order.domain.core.domain.Order;
+import br.com.order.domain.core.domain.entities.Order;
 import br.com.order.domain.gateway.OrderGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

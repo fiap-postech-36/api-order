@@ -2,11 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
+<<<<<<< HEAD
+    <artifactId>restaurante-module-parent</artifactId>
+    <groupId>br.com.nomeempresa.restaurante</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+
+=======
     <artifactId>order-module-parent</artifactId>
     <groupId>br.com.order</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
+>>>>>>> main
   <artifactId>application</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>application</name>
@@ -15,16 +24,27 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+<<<<<<< HEAD
+    <start-class>br.com.nomeempresa.restaurante.App</start-class>
+=======
     <start-class>br.com.order.App</start-class>
+>>>>>>> main
     <spring-cloud.version>2021.0.0</spring-cloud.version>
   </properties>
 
   <dependencies>
     <dependency>
+<<<<<<< HEAD
+      <groupId>br.com.nomeempresa.restaurante</groupId>
+      <artifactId>domain</artifactId></dependency>
+    <dependency>
+      <groupId>br.com.nomeempresa.restaurante</groupId>
+=======
       <groupId>br.com.order</groupId>
       <artifactId>domain</artifactId></dependency>
     <dependency>
       <groupId><br.com.nomeempresa.infra</groupId>
+>>>>>>> main
       <artifactId>infra</artifactId>
     </dependency>
     <dependency>

@@ -1,11 +1,14 @@
 package br.com.order.application.inout.mapper;
 
-
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.output.OrderOutput;
-import br.com.order.domain.core.domain.Order;
-import br.com.order.domain.core.domain.Product;
-import org.mapstruct.*;
+import br.com.order.domain.core.domain.entities.Order;
+import br.com.order.domain.core.domain.entities.Product;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;

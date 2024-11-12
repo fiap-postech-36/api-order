@@ -1,7 +1,6 @@
 package br.com.order.infra.types;
 
-
-import br.com.order.domain.core.domain.Category;
+import br.com.order.domain.core.domain.entities.Category;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
 

@@ -1,11 +1,10 @@
 package br.com.order.application.infra;
 
-
 import br.com.order.application.exception.CustomerAlreadyExistsException;
 import br.com.order.application.exception.CustomerNotFoundException;
 import br.com.order.application.exception.ResourceNotFound;
-import br.com.order.domain.exceptions.CoreExceptionNegocial;
-import br.com.order.domain.exceptions.CoreExceptionRuntime;
+import br.com.order.domain.core.exception.CoreExceptionNegocial;
+import br.com.order.domain.core.exception.CoreExceptionRuntime;
 import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -33,7 +32,6 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         CoreExceptionNegocial.class,
         CoreExceptionRuntime.class,
         CustomerAlreadyExistsException.class})
-
     protected ResponseEntity<Object> handleBadRequest(
         Exception ex, WebRequest request) {
 

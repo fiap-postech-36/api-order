@@ -1,11 +1,12 @@
 package br.com.order.application.facade;
 
+import br.com.order.application.exception.NoResourceFoundException;
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.mapper.OrderInputOutputMapper;
 import br.com.order.application.inout.output.OrderOutput;
 import br.com.order.application.usecase.order.*;
-import br.com.order.domain.core.domain.Order;
+import br.com.order.domain.core.domain.entities.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -56,7 +57,8 @@ public class OrderFacade {
     }
 
     public Order getOrderById(final Long id) {
-        return getByIdOrderUseCase.execute(id).orElseThrow(RuntimeException::new);
+        return getByIdOrderUseCase.execute(id)
+                .orElseThrow(NoResourceFoundException::new);
     }
 
 }

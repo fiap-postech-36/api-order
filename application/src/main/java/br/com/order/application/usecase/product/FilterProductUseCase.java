@@ -1,9 +1,8 @@
 package br.com.order.application.usecase.product;
 
-
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.usecase.UseCase;
-import br.com.order.domain.core.domain.Product;
+import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.domain.gateway.ProductGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

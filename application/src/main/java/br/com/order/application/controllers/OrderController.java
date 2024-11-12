@@ -1,10 +1,10 @@
 package br.com.order.application.controllers;
 
 import br.com.order.application.facade.OrderFacade;
+import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.output.OrderOutput;
-import br.com.order.application.inout.input.FilterInput;
-import br.com.order.domain.core.domain.Order;
+import br.com.order.domain.core.domain.entities.Order;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -53,3 +53,4 @@ public class OrderController {
     }
 
 }
+

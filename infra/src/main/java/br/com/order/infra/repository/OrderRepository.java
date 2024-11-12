@@ -1,8 +1,7 @@
 package br.com.order.infra.repository;
 
-
+import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.infra.entity.OrderEntity;
-import br.com.order.domain.core.domain.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

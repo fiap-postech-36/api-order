@@ -1,7 +1,7 @@
 package br.com.order.application.inout.output;
 
-import br.com.order.domain.core.domain.OrderStatus;
-import br.com.order.domain.core.domain.Product;
+import br.com.order.domain.core.domain.entities.OrderStatus;
+import br.com.order.domain.core.domain.entities.Product;
 
 import java.time.LocalDateTime;
 import java.util.List;

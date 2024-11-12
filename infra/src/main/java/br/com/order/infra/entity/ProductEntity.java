@@ -1,7 +1,7 @@
 package br.com.order.infra.entity;
 
 import br.com.order.infra.types.CategoryType;
-import br.com.order.domain.core.domain.Category;
+import br.com.order.domain.core.domain.entities.Category;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,4 +1,4 @@
-package br.com.order.domain.core.domain;
+package br.com.order.domain.core.domain.entities;
 
 public enum OrderStatus {
 

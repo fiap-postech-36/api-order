@@ -1,14 +1,11 @@
-package br.com.order.domain.core.domain;
+package br.com.order.domain.core.domain.entities;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-@Data
 @Getter
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -21,7 +18,10 @@ public class Product implements Serializable {
     private BigDecimal price;
     private Category category;
 
-    public Product() {
-    }
+
+
+
+
+
 
 }

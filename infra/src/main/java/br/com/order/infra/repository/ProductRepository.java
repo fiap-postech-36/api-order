@@ -1,8 +1,7 @@
 package br.com.order.infra.repository;
 
 import br.com.order.infra.entity.ProductEntity;
-
-import br.com.order.domain.core.domain.Category;
+import br.com.order.domain.core.domain.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

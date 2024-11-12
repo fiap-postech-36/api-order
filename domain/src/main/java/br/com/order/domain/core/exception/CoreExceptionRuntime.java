@@ -1,4 +1,4 @@
-package br.com.order.domain.exceptions;
+package br.com.order.domain.core.exception;
 
 import java.io.Serializable;
 
