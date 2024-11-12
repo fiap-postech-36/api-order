@@ -1,7 +1,13 @@
-package br.com.nomeempresa.restaurante.infra.repository;
+package br.com.order.infra.repository;
 
-import br.com.nomeempresa.restaurante.domain.core.domain.entities.OrderStatus;
-import br.com.nomeempresa.restaurante.infra.entity.OrderEntity;
+<<<<<<< HEAD
+import br.com.order.domain.core.domain.entities.OrderStatus;
+import br.com.order.infra.entity.OrderEntity;
+=======
+
+import br.com.order.infra.entity.OrderEntity;
+import br.com.order.domain.core.domain.OrderStatus;
+>>>>>>> main
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

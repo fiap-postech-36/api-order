@@ -1,10 +1,18 @@
-package br.com.nomeempresa.restaurante.application.usecase.order;
+package br.com.order.application.usecase.order;
 
-import br.com.nomeempresa.restaurante.application.inout.input.OrderInput;
-import br.com.nomeempresa.restaurante.application.inout.mapper.OrderInputOutputMapper;
-import br.com.nomeempresa.restaurante.application.usecase.UseCase;
-import br.com.nomeempresa.restaurante.domain.core.domain.entities.Order;
-import br.com.nomeempresa.restaurante.domain.gateway.OrderGateway;
+<<<<<<< HEAD
+import br.com.order.application.inout.input.OrderInput;
+import br.com.order.application.inout.mapper.OrderInputOutputMapper;
+import br.com.order.application.usecase.UseCase;
+import br.com.order.domain.core.domain.entities.Order;
+=======
+
+import br.com.order.application.inout.input.OrderInput;
+import br.com.order.application.inout.mapper.OrderInputOutputMapper;
+import br.com.order.application.usecase.UseCase;
+import br.com.order.domain.core.domain.Order;
+>>>>>>> main
+import br.com.order.domain.gateway.OrderGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

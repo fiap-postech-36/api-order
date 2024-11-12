@@ -1,0 +1,87 @@
+package br.com.order.application.controllers;
+
+import br.com.order.application.facade.OrderFacade;
+import br.com.order.application.inout.input.OrderInput;
+import br.com.order.application.inout.input.FilterInput;
+import br.com.order.application.inout.output.OrderOutput;
+import br.com.order.domain.core.domain.Order;
+import br.com.order.domain.core.domain.OrderStatus;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+class OrderControllerTest {
+
+    private OrderFacade orderFacade;
+    private OrderController orderController;
+
+    @BeforeEach
+    void setUp() {
+        orderFacade = mock(OrderFacade.class); // Instância mock direta
+        orderController = new OrderController(orderFacade); // Injeção direta
+    }
+
+    @Test
+    void shouldFindAllOrders() {
+        Page<OrderOutput> orderPage = new PageImpl<>(Collections.singletonList(new OrderOutput(1L, OrderStatus.READY, LocalDateTime.now(), anyList())));
+        when(orderFacade.filter(any(FilterInput.class))).thenReturn(orderPage);
+
+        ResponseEntity<Page<OrderOutput>> response = orderController.findAll(Map.of());
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(orderPage, response.getBody());
+        verify(orderFacade, times(1)).filter(any(FilterInput.class));
+    }
+
+//    @Test
+//    void shouldCreateOrder() {
+//        OrderInput orderInput = new OrderInput();
+//        OrderOutput orderOutput = new OrderOutput();
+//        when(orderFacade.create(any(OrderInput.class))).thenReturn(orderOutput);
+//
+//        ResponseEntity<OrderOutput> response = orderController.create(orderInput);
+//
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(orderOutput, response.getBody());
+//        verify(orderFacade, times(1)).create(any(OrderInput.class));
+//    }
+//
+//    @Test
+//    void shouldDeleteOrder() {
+//        Long orderId = 1L;
+//
+//        ResponseEntity<Order> response = orderController.delete(orderId);
+//
+//        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+//        verify(orderFacade, times(1)).delete(orderId);
+//    }
+//
+//    @Test
+//    void shouldGetOrderById() {
+//        Long orderId = 1L;
+//        OrderOutput orderOutput = new OrderOutput();
+//        when(orderFacade.get(orderId)).thenReturn(orderOutput);
+//
+//        ResponseEntity<OrderOutput> response = orderController.getById(orderId);
+//
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(orderOutput, response.getBody());
+//        verify(orderFacade, times(1)).get(orderId);
+//    }
+//
+//    @Test
+//    void shouldEditOrder() {
+//        Long orderId = 1L;
+//        OrderInput orderInput = new OrderInput
+}

@@ -10,5 +10,5 @@ import java.util.Optional;
  **/
 public interface UseCase<I, O> {
 
-    Optional<O> execute(final @Valid I in);
+    Optional<O> execute(final @Valid I in) throws Exception;
 }
