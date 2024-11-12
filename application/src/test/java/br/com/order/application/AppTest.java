@@ -8,6 +8,6 @@ public class AppTest {
 
     @Test
     void contextLoads() {
-        // Este teste verifica se o contexto da aplicação Spring Boot é carregado corretamente.
+        // Este método de teste verifica se o contexto da aplicação é carregado corretamente
     }
 }
