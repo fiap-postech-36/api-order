@@ -1,6 +1,6 @@
-package br.com.nomeempresa.restaurante.infra.mapper;
+package br.com.order.infra.mapper;
 
-import br.com.nomeempresa.restaurante.infra.entity.ProductEntity;
+import br.com.order.infra.entity.ProductEntity;
 import br.com.order.domain.core.domain.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

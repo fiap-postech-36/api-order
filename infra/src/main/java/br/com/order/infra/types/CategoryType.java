@@ -1,4 +1,4 @@
-package br.com.nomeempresa.restaurante.infra.types;
+package br.com.order.infra.types;
 
 
 import br.com.order.domain.core.domain.Category;

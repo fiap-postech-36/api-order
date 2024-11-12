@@ -1,7 +1,7 @@
-package br.com.nomeempresa.restaurante.infra.gateways;
+package br.com.order.infra.gateways;
 
-import br.com.nomeempresa.restaurante.infra.repository.ProductRepository;
-import br.com.nomeempresa.restaurante.infra.mapper.ProductMapper;
+import br.com.order.infra.repository.ProductRepository;
+import br.com.order.infra.mapper.ProductMapper;
 import br.com.order.domain.core.domain.Category;
 import br.com.order.domain.core.domain.Product;
 import br.com.order.domain.gateway.ProductGateway;

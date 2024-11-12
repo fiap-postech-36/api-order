@@ -1,6 +1,6 @@
-package br.com.nomeempresa.restaurante.infra.entity;
+package br.com.order.infra.entity;
 
-import br.com.nomeempresa.restaurante.infra.types.CategoryType;
+import br.com.order.infra.types.CategoryType;
 import br.com.order.domain.core.domain.Category;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

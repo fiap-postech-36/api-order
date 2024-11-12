@@ -1,6 +1,6 @@
-package br.com.nomeempresa.restaurante.infra.repository;
+package br.com.order.infra.repository;
 
-import br.com.nomeempresa.restaurante.infra.entity.ProductEntity;
+import br.com.order.infra.entity.ProductEntity;
 
 import br.com.order.domain.core.domain.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

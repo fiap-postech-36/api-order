@@ -1,4 +1,4 @@
-package br.com.nomeempresa.restaurante.infra.entity;
+package br.com.order.infra.entity;
 
 import br.com.order.domain.core.domain.OrderStatus;
 import jakarta.persistence.Column;

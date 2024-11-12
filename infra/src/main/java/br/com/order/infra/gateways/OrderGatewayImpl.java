@@ -1,8 +1,8 @@
-package br.com.nomeempresa.restaurante.infra.gateways;
+package br.com.order.infra.gateways;
 
 
-import br.com.nomeempresa.restaurante.infra.mapper.OrderMapper;
-import br.com.nomeempresa.restaurante.infra.repository.OrderRepository;
+import br.com.order.infra.mapper.OrderMapper;
+import br.com.order.infra.repository.OrderRepository;
 import br.com.order.domain.core.domain.Order;
 import br.com.order.domain.core.domain.OrderStatus;
 import br.com.order.domain.gateway.OrderGateway;
