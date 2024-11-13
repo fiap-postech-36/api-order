@@ -1,4 +1,4 @@
-package br.com.order.infra.domain.application.entity;
+package br.com.order.infra.entity;
 
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.infra.entity.ProductEntity;
