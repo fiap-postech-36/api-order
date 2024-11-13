@@ -6,6 +6,7 @@ import lombok.Getter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 @Getter
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -17,11 +18,5 @@ public class Product implements Serializable {
     private String urlImage;
     private BigDecimal price;
     private Category category;
-
-
-
-
-
-
 
 }

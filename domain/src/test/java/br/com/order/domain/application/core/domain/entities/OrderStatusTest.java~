@@ -1,0 +1,4 @@
+package br.com.order.domain.application.core.domain.entities;
+
+public class OrderStatusTest {
+}
