@@ -1,4 +1,4 @@
-package br.com.order.application.exception;
+package br.com.application.exception;
 
 import org.junit.jupiter.api.Test;
 

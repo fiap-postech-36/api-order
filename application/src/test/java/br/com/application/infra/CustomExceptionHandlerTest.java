@@ -1,7 +1,9 @@
-package br.com.order.application.infra;
+package br.com.application.infra;
 
 import br.com.order.application.exception.CustomerAlreadyExistsException;
 import br.com.order.application.exception.CustomerNotFoundException;
+import br.com.order.application.infra.ApiErrorMessage;
+import br.com.order.application.infra.CustomExceptionHandler;
 import jakarta.validation.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
