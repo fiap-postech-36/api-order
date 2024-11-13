@@ -1,5 +1,6 @@
-package br.com.order.application.infra;
+package br.com.application.infra;
 
+import br.com.order.application.infra.ApiErrorMessage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;

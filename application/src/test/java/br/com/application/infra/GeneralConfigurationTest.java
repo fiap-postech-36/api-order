@@ -1,5 +1,6 @@
-package br.com.order.application.infra;
+package br.com.application.infra;
 
+import br.com.order.application.infra.GeneralConfiguration;
 import org.junit.Test;
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;

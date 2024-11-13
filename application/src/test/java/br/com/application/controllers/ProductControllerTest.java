@@ -1,5 +1,6 @@
-package br.com.order.application.controllers;
+package br.com.application.controllers;
 
+import br.com.order.application.controllers.ProductController;
 import br.com.order.application.facade.ProductFacade;
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.ProductInput;

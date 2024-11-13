@@ -1,6 +1,7 @@
-package br.com.order.application.usecase.product;
+package br.com.application.usecase.product;
 
 import br.com.order.application.inout.input.FilterInput;
+import br.com.order.application.usecase.product.FilterProductUseCase;
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.domain.gateway.ProductGateway;

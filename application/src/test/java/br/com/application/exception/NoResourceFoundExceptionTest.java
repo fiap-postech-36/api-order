@@ -1,5 +1,6 @@
-package br.com.order.application.exception;
+package br.com.application.exception;
 
+import br.com.order.application.exception.NoResourceFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 

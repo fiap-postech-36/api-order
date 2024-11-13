@@ -1,5 +1,6 @@
-package br.com.order.application.exception;
+package br.com.application.exception;
 
+import br.com.order.application.exception.ApiErrorException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
