@@ -101,6 +101,7 @@
           <excludes>
             <exclude>**/inout/input/**</exclude>
             <exclude>**/facade/**</exclude>
+            <exclude>**/usecase/order/**</exclude>
             <exclude>**/inout/output/**</exclude>
             <exclude>**/inout/mapper/**</exclude>
             <exclude>**/br/com/order/App.class</exclude>
