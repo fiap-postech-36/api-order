@@ -1,17 +1,9 @@
-package br.com.order.application.usecase.order;
+package br.com.application.application.usecase.order;
 
-<<<<<<< HEAD
-import br.com.order.application.inout.input.OrderInput;
-import br.com.order.application.inout.mapper.OrderInputOutputMapper;
-import br.com.order.application.usecase.UseCase;
+import br.com.application.application.inout.input.OrderInput;
+import br.com.application.application.inout.mapper.OrderInputOutputMapper;
+import br.com.application.application.usecase.UseCase;
 import br.com.order.domain.core.domain.entities.Order;
-=======
-
-import br.com.order.application.inout.input.OrderInput;
-import br.com.order.application.inout.mapper.OrderInputOutputMapper;
-import br.com.order.application.usecase.UseCase;
-import br.com.order.domain.core.domain.Order;
->>>>>>> main
 import br.com.order.domain.gateway.OrderGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

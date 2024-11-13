@@ -2,7 +2,6 @@ package br.com.order.application.usecase.product;
 
 import br.com.order.application.exception.ResourceNotFound;
 import br.com.order.application.inout.input.ProductInput;
-import br.com.order.application.usecase.product.EditProductUseCase;
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.domain.gateway.ProductGateway;

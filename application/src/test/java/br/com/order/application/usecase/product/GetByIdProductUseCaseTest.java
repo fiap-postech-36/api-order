@@ -1,6 +1,5 @@
 package br.com.order.application.usecase.product;
 
-import br.com.order.application.usecase.product.GetByIdProductUseCase;
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.domain.gateway.ProductGateway;

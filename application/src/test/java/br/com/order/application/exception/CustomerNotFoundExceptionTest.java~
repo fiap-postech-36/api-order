@@ -1,4 +1,0 @@
-package br.com.order.application.exception;
-
-public class CustomerNotFoundExceptionTest {
-}
