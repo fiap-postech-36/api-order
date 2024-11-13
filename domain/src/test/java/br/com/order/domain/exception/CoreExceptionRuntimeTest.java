@@ -1,4 +1,4 @@
-package br.com.order.domain.application.exception;
+package br.com.order.domain.exception;
 
 import br.com.order.domain.core.exception.CoreExceptionRuntime;
 import org.junit.jupiter.api.Test;

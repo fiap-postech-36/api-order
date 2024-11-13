@@ -1,4 +1,0 @@
-package br.com.order.domain.application.exception;
-
-public class CoreExceptionRuntimeTest {
-}
