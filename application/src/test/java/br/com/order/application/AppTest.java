@@ -1,4 +1,4 @@
-package br.com.order;
+package br.com.order.application;
 
 import static org.junit.Assert.assertTrue;
 
