@@ -1,4 +1,4 @@
-package br.com.order.usecase.product;
+package br.com.order.application.usecase.product;
 
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.usecase.product.FilterProductUseCase;
