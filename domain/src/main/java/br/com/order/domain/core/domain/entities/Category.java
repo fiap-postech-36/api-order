@@ -1,5 +1,8 @@
 package br.com.order.domain.core.domain.entities;
 
+import lombok.Getter;
+
+@Getter
 public enum Category {
     LANCHE("LANCHE"),ACOMPANHAMENTO("ACOMPANHAMENTO"),BEBIDA("BEBIDA"),SOBREMESA("SOBREMESA");
 
@@ -7,10 +10,6 @@ public enum Category {
 
     Category(String category) {
         code = category;
-    }
-
-    public String getCode() {
-        return code;
     }
 
     public static Category fromCode(String category) {
