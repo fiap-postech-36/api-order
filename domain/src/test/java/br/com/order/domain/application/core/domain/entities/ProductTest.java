@@ -13,7 +13,7 @@ class ProductTest {
     @Test
     void testProductConstructor() {
         // Criando uma instância de Product
-        Product product = new Product(1L, "Coke", "Refrigerante", "http://image.com", BigDecimal.valueOf(5.99), Category.BEBIDA);
+        Product product = new Product(1L, "Coke", "Refrigerante", "https://image.com", BigDecimal.valueOf(5.99), Category.BEBIDA);
 
         // Testando a criação correta do objeto
         assertNotNull(product);
