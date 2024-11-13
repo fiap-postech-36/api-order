@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-  <groupId>br.com.order</groupId>
-  <artifactId>order-module-parent</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>order-module-parent</name>
-
-  <url>https://www.restaurantenomeempresa.com.br</url>
+    <groupId>br.com.order</groupId>
+    <artifactId>order-module-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>order-module-parent</name>
 
     <licenses>
         <license>
@@ -28,7 +27,6 @@
             <name>Daniel Matos</name>
             <email>danpereiramatos@gmail.com</email>
             <organization>TechChalleng Desafio Restaurante</organization>
-            <organizationUrl>https://www.restaurantenomeempresa.com.br/</organizationUrl>
         </developer>
     </developers>
 
@@ -39,38 +37,39 @@
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-      <sonar.organization>fiap-postech-36</sonar.organization>
-      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <sonar.organization>fiap-postech-36</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
 
 
-  <modules>
-    <module>domain</module>
-    <module>application</module>
-    <module>infra</module>
-  </modules>
+    <modules>
+        <module>application</module>
+        <module>domain</module>
+        <module>infra</module>
+    </modules>
 
-  <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>br.com.order</groupId>
-            <artifactId>domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.order</groupId>
-            <artifactId>infra</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.order</groupId>
-            <artifactId>application</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>br.com.order</groupId>
+                <artifactId>application</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com.order</groupId>
+                <artifactId>domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com.order</groupId>
+                <artifactId>infra</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 </project>

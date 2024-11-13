@@ -20,14 +20,15 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>br.com.order</groupId>
-      <artifactId>domain</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>br.com.order</groupId>
       <artifactId>infra</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>br.com.order</groupId>
+      <artifactId>domain</artifactId>
     </dependency>
 
     <dependency>

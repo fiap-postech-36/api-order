@@ -1,6 +1,5 @@
 package br.com.order.domain.core.domain.entities;
 
-import br.com.order.domain.core.domain.entities.Category;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
