@@ -1,4 +1,4 @@
-package br.com.order.infra.domain.application.types;
+package br.com.order.infra.types;
 
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.infra.types.CategoryType;

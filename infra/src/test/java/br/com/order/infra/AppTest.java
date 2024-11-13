@@ -1,4 +1,4 @@
-package br.com.order.domain.application;
+package br.com.order.infra;
 
 import static org.junit.Assert.assertTrue;
 

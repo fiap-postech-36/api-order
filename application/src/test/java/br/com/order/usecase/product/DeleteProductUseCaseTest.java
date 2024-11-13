@@ -1,5 +1,6 @@
-package br.com.order.application.usecase.product;
+package br.com.order.usecase.product;
 
+import br.com.order.application.usecase.product.DeleteProductUseCase;
 import br.com.order.domain.gateway.ProductGateway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

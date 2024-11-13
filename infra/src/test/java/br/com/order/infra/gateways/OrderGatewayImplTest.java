@@ -1,4 +1,4 @@
-package br.com.order.infra.domain.application.gateways;
+package br.com.order.infra.gateways;
 
 import br.com.order.domain.core.domain.entities.Order;
 import br.com.order.domain.core.domain.entities.OrderStatus;
