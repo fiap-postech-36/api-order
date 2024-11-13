@@ -1,4 +1,4 @@
-package br.com.order.domain;
+package br.com.order;
 
 import static org.junit.Assert.assertTrue;
 

@@ -8,11 +8,11 @@
         <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-  <groupId>br.com.nomeempresa.restaurante</groupId>
-  <artifactId>restaurante-module-parent</artifactId>
+  <groupId>br.com.order</groupId>
+  <artifactId>order-module-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>restaurante-module-parent</name>
+  <name>order-module-parent</name>
 
   <url>https://www.restaurantenomeempresa.com.br</url>
 
@@ -57,17 +57,17 @@
   <dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>br.com.nomeempresa.restaurante</groupId>
+            <groupId>br.com.order</groupId>
             <artifactId>domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>br.com.nomeempresa.restaurante</groupId>
+            <groupId>br.com.order</groupId>
             <artifactId>infra</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>br.com.nomeempresa.restaurante</groupId>
+            <groupId>br.com.order</groupId>
             <artifactId>application</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

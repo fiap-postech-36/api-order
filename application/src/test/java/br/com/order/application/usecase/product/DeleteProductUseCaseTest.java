@@ -1,4 +1,4 @@
-package br.com.order.usecase.product;
+package br.com.order.application.usecase.product;
 
 import br.com.order.application.usecase.product.DeleteProductUseCase;
 import br.com.order.domain.gateway.ProductGateway;
