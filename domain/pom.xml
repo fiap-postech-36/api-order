@@ -16,12 +16,6 @@
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <junit.platform.launcher.version>1.8.2</junit.platform.launcher.version>
         <spring.boot.version>2.5.4</spring.boot.version>
-
-
-        <properties>
-            <sonar.coverage.exclusions>**/domain/**</sonar.coverage.exclusions>
-        </properties>
-
     </properties>
 
     <dependencies>
