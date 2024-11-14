@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-//@Data
 public class ApiErrorMessage {
 
     private HttpStatus status;
