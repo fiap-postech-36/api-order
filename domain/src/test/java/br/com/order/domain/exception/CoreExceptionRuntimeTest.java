@@ -18,6 +18,18 @@ class CoreExceptionRuntimeTest {
     }
 
     @Test
+    void testCoreExceptionRuntimeMessage() {
+        // Arrange
+        String expectedMessage = "Test exception message";
+
+        // Act
+        CoreExceptionRuntime exception = new CoreExceptionRuntime(expectedMessage);
+
+        // Assert
+        assertEquals(expectedMessage, exception.getMessage()); // Verifica se a mensagem foi passada corretamente
+    }
+
+    @Test
     void testCoreExceptionRuntimeNoMessage() {
         // Criando uma instância da exceção sem uma mensagem
         CoreExceptionRuntime exception = new CoreExceptionRuntime(null);
