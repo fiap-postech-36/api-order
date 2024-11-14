@@ -13,11 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class OrderTest {
 
     private Order order;
+    private Product product2;
 
     @BeforeEach
     void setUp() {
         Product product1 = new Product(1L, "Produto 1", "desc ", "url", new BigDecimal("10.00"), Category.ACOMPANHAMENTO);
-        Product product2 = new Product(1L, "Produto 1", "desc ", "url", new BigDecimal("10.00"), Category.ACOMPANHAMENTO);
+        product2 = new Product(1L, "Produto 1", "desc ", "url", new BigDecimal("10.00"), Category.ACOMPANHAMENTO);
         order = new Order(1L, OrderStatus.CREATED, LocalDateTime.now(), LocalDateTime.now(), Arrays.asList(product1, product2));
     }
 
