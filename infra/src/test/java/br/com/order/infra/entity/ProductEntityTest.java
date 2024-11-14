@@ -1,7 +1,6 @@
 package br.com.order.infra.entity;
 
 import br.com.order.domain.core.domain.entities.Category;
-import br.com.order.infra.entity.ProductEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +9,7 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class ProductEntityTest {
+public class ProductEntityTest {
 
     private ProductEntity productEntity;
 

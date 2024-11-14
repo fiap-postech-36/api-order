@@ -1,16 +1,16 @@
 package br.com.order.infra.mapper;
 
 import br.com.order.domain.core.domain.entities.Category;
-import br.com.order.infra.entity.ProductEntity;
 import br.com.order.domain.core.domain.entities.Product;
-import br.com.order.infra.mapper.ProductMapper;
+import br.com.order.infra.entity.ProductEntity;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class ProductMapperTest {
+public class ProductMapperTest {
 
     private final ProductMapper mapper = ProductMapper.INSTANCE;
 

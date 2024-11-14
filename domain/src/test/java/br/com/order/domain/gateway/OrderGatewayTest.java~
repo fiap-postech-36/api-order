@@ -14,7 +14,7 @@ import java.util.*;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class OrderGatewayTest {
+public class OrderGatewayTest {
 
     @Mock
     private OrderGateway orderGateway;
@@ -74,7 +74,7 @@ class OrderGatewayTest {
 
     @Test
     void testFindByStatus() {
-        when(orderGateway.findByStatus("PENDING")).thenReturn(Arrays.asList(order));
+        when(orderGateway.findByStatus("PENDING")).thenReturn(Collections.singletonList(order));
 
         Collection<Order> orders = orderGateway.findByStatus("PENDING");
 
