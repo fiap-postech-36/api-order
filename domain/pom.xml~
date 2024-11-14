@@ -19,7 +19,7 @@
 
 
         <properties>
-            <sonar.coverage.exclusions>**/domain/**</sonar.coverage.exclusions>
+            <sonar.coverage.exclusions>foo/**/*,**/bar/*</sonar.coverage.exclusions>
         </properties>
 
     </properties>
