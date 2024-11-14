@@ -15,10 +15,12 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-class ProductGatewayImplTest {
+public class ProductGatewayImplTest {
 
     @Mock
     private ProductRepository productRepository;

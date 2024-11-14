@@ -2,11 +2,10 @@ package br.com.order.infra.mapper;
 
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.domain.core.domain.entities.OrderStatus;
+import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.infra.entity.OrderEntity;
 import br.com.order.infra.entity.ProductEntity;
-import br.com.order.infra.mapper.OrderMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
@@ -18,7 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class OrderMapperTest {
+public class OrderMapperTest {
 
     private OrderMapper mapper;
 

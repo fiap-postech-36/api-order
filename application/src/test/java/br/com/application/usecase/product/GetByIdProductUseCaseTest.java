@@ -16,7 +16,8 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)  // Inicializa os mocks para o JUnit 5
+@ExtendWith(MockitoExtension.class)
+public // Inicializa os mocks para o JUnit 5
 class GetByIdProductUseCaseTest {
 
     @Mock

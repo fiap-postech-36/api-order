@@ -22,7 +22,7 @@ import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class EditProductUseCaseTest {
+public class EditProductUseCaseTest {
 
     @Mock
     private ProductGateway productGateway;

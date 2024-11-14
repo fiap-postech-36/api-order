@@ -1,14 +1,12 @@
 package br.com.order.domain.core.domain.entities;
 
-import br.com.order.domain.core.domain.entities.Category;
-import br.com.order.domain.core.domain.entities.Product;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ProductTest {
+public class ProductTest {
 
     @Test
     void testProductConstructor() {

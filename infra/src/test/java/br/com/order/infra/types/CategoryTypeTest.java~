@@ -1,6 +1,7 @@
 package br.com.order.infra.types;
 
 import br.com.order.domain.core.domain.entities.Category;
+import br.com.order.infra.types.CategoryType;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,8 +15,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class CategoryTypeTest {
 

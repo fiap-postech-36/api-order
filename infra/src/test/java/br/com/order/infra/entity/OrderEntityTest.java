@@ -1,8 +1,6 @@
 package br.com.order.infra.entity;
 
 import br.com.order.domain.core.domain.entities.OrderStatus;
-import br.com.order.infra.entity.OrderEntity;
-import br.com.order.infra.entity.ProductEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class OrderEntityTest {
+public class OrderEntityTest {
 
     private OrderEntity orderEntity;
     private ProductEntity product1;

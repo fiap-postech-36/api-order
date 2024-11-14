@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CategoryTest {
+public class CategoryTest {
 
     @Test
     void testFromCodeValidCategory() {
