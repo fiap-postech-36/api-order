@@ -23,6 +23,21 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Daniel Matos</name>
+            <email>danpereiramatos@gmail.com</email>
+            <organization>TechChalleng Desafio Restaurante</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>git@github.com:danpereiramatos/restaurante.git</url>
+        <connection>scm:git@github.com:danpereiramatos/restaurante.git</connection>
+        <developerConnection>scm:git:git@github.com:danpereiramatos/restaurante.git
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
