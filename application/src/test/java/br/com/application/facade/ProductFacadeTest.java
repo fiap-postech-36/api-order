@@ -197,7 +197,7 @@ class ProductFacadeTest {
         Long productId = 1L;
         Product productOutput = new Product(2L, "Test Product", "descricao do produto", "url da img", new BigDecimal("100.0"), Category.ACOMPANHAMENTO);
 
-        when(getByIdProductUseCase.execute(productId)).thenReturn(Optional.<Product>of(productOutput));
+        when(getByIdProductUseCase.execute(productId)).thenReturn(Optional.of(productOutput));
 
         ProductOutput result = productFacade.get(productId);
 
