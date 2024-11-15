@@ -25,7 +25,7 @@ public class ProductController {
         return ResponseEntity.ok(productFacade.create(productInput));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idProduct}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long idProduct) {
         productFacade.delete(idProduct);
         return ResponseEntity.noContent().build();
