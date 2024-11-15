@@ -18,8 +18,6 @@ public class EditProductUseCase implements UseCase<ProductInput, Product> {
 
     @Override
     public Optional<Product> execute(final ProductInput productInput) {
-        productGateway.findById(productInput.id()).orElseThrow(ResourceNotFound::new);
-
         return productGateway.save(ProductInputOutputMapper.INSTANCE.productInputToProduct(productInput));
     }
 }
