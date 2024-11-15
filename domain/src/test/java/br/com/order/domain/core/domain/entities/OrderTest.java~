@@ -47,10 +47,10 @@ public class OrderTest {
         order.nextStepOrder();
     }
 
-//    @Test
-//    void testCalculateTotal() {
-//        // Verifica se o total é calculado corretamente
-//        BigDecimal total = order.calculateTotal();
-//    }
+    @Test
+    void testCalculateTotal() {
+        // Verifica se o total é calculado corretamente
+        BigDecimal total = order.calculateTotal();
+    }
 }
 
