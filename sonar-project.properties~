@@ -1,5 +1,5 @@
 sonar.organization=fiap-postech-36
-sonar.projectKey=fiap-postech-36_api-order
+#sonar.projectKey=fiap-postech-36_api-order
 sonar.modules=modulo1,modulo2,modulo3
 
 sonar.sources=src/**
