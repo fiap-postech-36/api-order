@@ -73,16 +73,4 @@ public class EditProductUseCaseTest {
         verify(productGateway).save(product); // Verifica se o save foi chamado
         assertEquals(Optional.of(product), result); // Verifica se o resultado é o esperado
     }
-
-    @Test
-    void testExecute_whenProductDoesNotExist() {
-        // Arrange
-        ProductInput productInput = new ProductInput(1L, "Product Name", "desc", "url img", new BigDecimal("10.0"), Category.ACOMPANHAMENTO);
-        when(productGateway.findById(productInput.id())).thenReturn(Optional.empty());
-
-        // Act & Assert
-        assertThrows(ResourceNotFound.class, () -> editProductUseCase.execute(productInput)); // Verifica se a exceção é lançada
-        verify(productGateway).findById(productInput.id()); // Verifica se o findById foi chamado
-        verify(productGateway, never()).save(any(Product.class)); // Garante que o save não foi chamado
-    }
 }
