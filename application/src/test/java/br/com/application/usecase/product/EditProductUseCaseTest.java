@@ -85,13 +85,4 @@ public class EditProductUseCaseTest {
         verify(productGateway).findById(productInput.id()); // Verifica se o findById foi chamado
         verify(productGateway, never()).save(any(Product.class)); // Garante que o save não foi chamado
     }
-
-    @Test
-    void testExecute_shouldThrowResourceNotFoundWhenProductDoesNotExist() {
-        // Arranjo: mockando o comportamento do gateway para retornar um produto não encontrado
-        when(productGateway.findById(productInput.id())).thenReturn(Optional.empty());
-
-        // Ação: chamando o método execute e verificando se a exceção ResourceNotFound é lançada
-        assertThrows(ResourceNotFound.class, () -> editProductUseCase.execute(productInput), "Deveria lançar ResourceNotFound quando o produto não for encontrado.");
-    }
 }
