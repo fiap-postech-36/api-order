@@ -1,4 +1,4 @@
-package br.com.order.domain.exception;
+package br.com.order.domain.core.exception;
 
 import br.com.order.domain.core.exception.CoreExceptionRuntime;
 import org.junit.jupiter.api.Test;
@@ -19,13 +19,8 @@ class CoreExceptionRuntimeTest {
 
     @Test
     void testCoreExceptionRuntimeMessage() {
-        // Arrange
         String expectedMessage = "Test exception message";
-
-        // Act
         CoreExceptionRuntime exception = new CoreExceptionRuntime(expectedMessage);
-
-        // Assert
         assertEquals(expectedMessage, exception.getMessage()); // Verifica se a mensagem foi passada corretamente
     }
 
