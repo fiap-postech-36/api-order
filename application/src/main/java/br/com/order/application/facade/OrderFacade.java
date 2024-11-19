@@ -9,8 +9,6 @@ import br.com.order.application.inout.output.OrderOutput;
 import br.com.order.application.inout.output.OrderRabbitOutput;
 import br.com.order.application.usecase.order.*;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.Product;
-import br.com.order.domain.gateway.ProductGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.Page;
@@ -18,10 +16,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 @RequiredArgsConstructor
@@ -44,9 +38,9 @@ public class OrderFacade {
     }
 
     private void notificateCreatedOrder(OrderOutput orderOutput) {
-        if(orderOutput != null) {
+        if (orderOutput != null) {
             BigDecimal valorTotal = calculateTotalOrderUseCase.execute(orderOutput).orElseThrow(RuntimeException::new);
-            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.created", new OrderRabbitOutput(orderOutput.id(), valorTotal));
+            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.KEY_NAME, new OrderRabbitOutput(orderOutput.id(), valorTotal));
         }
     }
 

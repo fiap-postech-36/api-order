@@ -5,6 +5,7 @@ import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.domain.gateway.OrderGateway;
 import br.com.order.infra.mapper.OrderMapper;
 import br.com.order.infra.repository.OrderRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Transactional
 @RequiredArgsConstructor
 public class OrderGatewayImpl implements OrderGateway {
 
