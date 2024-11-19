@@ -44,15 +44,15 @@ public class OrderGatewayImpl implements OrderGateway {
     @Override
     public Collection<Order> findByStatus(final String status) {
         return orderRepository.findByStatus(status).stream()
-            .map(mapper::orderEntityToOrder)
-            .toList();
+                .map(mapper::orderEntityToOrder)
+                .toList();
     }
 
     @Override
     public Collection<Order> findAll() {
         return orderRepository.findAll().stream()
-            .map(mapper::orderEntityToOrder)
-            .toList();
+                .map(mapper::orderEntityToOrder)
+                .toList();
     }
 
     @Override
@@ -63,8 +63,8 @@ public class OrderGatewayImpl implements OrderGateway {
     @Override
     public Collection<Order> findByPriority() {
         return orderRepository.getByPriority(List.of(OrderStatus.IN_PREPARATION, OrderStatus.RECEIVED, OrderStatus.READY)).stream()
-            .map(mapper::orderEntityToOrder)
-            .sorted(Comparator.comparing(order -> order.getStatus().getFilterOrder()))
-            .toList();
+                .map(mapper::orderEntityToOrder)
+                .sorted(Comparator.comparing(order -> order.getStatus().getFilterOrder()))
+                .toList();
     }
 }

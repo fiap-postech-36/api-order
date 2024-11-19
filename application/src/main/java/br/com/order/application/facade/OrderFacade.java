@@ -9,6 +9,8 @@ import br.com.order.application.inout.output.OrderOutput;
 import br.com.order.application.inout.output.OrderRabbitOutput;
 import br.com.order.application.usecase.order.*;
 import br.com.order.domain.core.domain.entities.Order;
+import br.com.order.domain.core.domain.entities.Product;
+import br.com.order.domain.gateway.ProductGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.Page;
@@ -16,6 +18,10 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Component
 @RequiredArgsConstructor
@@ -28,14 +34,20 @@ public class OrderFacade {
     private final DeleteOrderUseCase deleteOrderUseCase;
     private final GetByIdOrderUseCase getByIdOrderUseCase;
     private final RabbitTemplate rabbitTemplate;
+    private final CalculateTotalOrderUseCase calculateTotalOrderUseCase;
 
     public OrderOutput create(final OrderInput orderInput) {
         final var customerOutPut = createOrderUseCase.execute(orderInput);
         OrderOutput orderOutput = OrderInputOutputMapper.INSTANCE.orderToOrderResponse(customerOutPut.orElse(null));
-
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.created", new OrderRabbitOutput(orderOutput.id(), BigDecimal.TEN));
-        System.out.println("Mensagem enviada: " + "Pedido criado com ID: " + orderOutput.id());
+        notificateCreatedOrder(orderOutput);
         return orderOutput;
+    }
+
+    private void notificateCreatedOrder(OrderOutput orderOutput) {
+        if(orderOutput != null) {
+            BigDecimal valorTotal = calculateTotalOrderUseCase.execute(orderOutput).orElseThrow(RuntimeException::new);
+            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.created", new OrderRabbitOutput(orderOutput.id(), valorTotal));
+        }
     }
 
     public OrderOutput update(final OrderInput orderInput) {
