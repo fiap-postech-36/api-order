@@ -5,7 +5,7 @@ import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.ProductInput;
 import br.com.order.application.inout.mapper.ProductInputOutputMapper;
 import br.com.order.application.inout.output.ProductOutput;
-import br.com.nomeempresa.restaurante.application.usecase.product.*;
+import br.com.application.application.usecase.product.*;
 import br.com.order.application.usecase.product.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

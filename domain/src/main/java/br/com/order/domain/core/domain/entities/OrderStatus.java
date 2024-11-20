@@ -1,5 +1,8 @@
 package br.com.order.domain.core.domain.entities;
 
+import lombok.Getter;
+
+@Getter
 public enum OrderStatus {
 
     CANCELED("Cancelado", -1, 4),
@@ -19,18 +22,6 @@ public enum OrderStatus {
         this.description = description;
         this.order = order;
         this.filterOrder = filterOrder;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getOrder() {
-        return order;
-    }
-
-    public int getFilterOrder() {
-        return filterOrder;
     }
 
     public static OrderStatus getFromOrder(final int order) {
