@@ -3,6 +3,7 @@ package br.com.application.facade;
 import br.com.order.application.exception.NoResourceFoundException;
 import br.com.order.application.facade.OrderFacade;
 import br.com.order.application.inout.output.OrderOutput;
+import br.com.order.application.inout.output.OrderRabbitOutput;
 import br.com.order.application.usecase.order.*;
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Order;
@@ -14,6 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -40,6 +42,10 @@ class OrderFacadeTest {
     private DeleteOrderUseCase deleteOrderUseCase;
     @Mock
     private GetByIdOrderUseCase getByIdOrderUseCase;
+    @Mock
+    private CalculateTotalOrderUseCase calculateTotalOrderUseCase;
+    @Mock
+    private RabbitTemplate rabbitTemplate;
 
     private Long orderId;
     private Order order;
@@ -66,11 +72,14 @@ class OrderFacadeTest {
     @Test
     void testCreateOrder() {
         when(createOrderUseCase.execute(Mockito.any())).thenReturn(Optional.of(order));
+        when(calculateTotalOrderUseCase.execute(Mockito.any())).thenReturn(Optional.of(BigDecimal.TEN));
 
         OrderOutput result = orderFacade.create(Mockito.any());
 
         assertNotNull(result);
         verify(createOrderUseCase, times(1)).execute(Mockito.any());
+        verify(calculateTotalOrderUseCase, times(1)).execute(Mockito.any());
+        verify(rabbitTemplate, times(1)).convertAndSend(Mockito.anyString(), Mockito.anyString(), Mockito.any(OrderRabbitOutput.class));
     }
 
     @Test
