@@ -1,11 +1,8 @@
 package br.com.order.application.usecase.order;
 
-import br.com.order.application.exception.NoResourceFoundException;
 import br.com.order.application.inout.output.OrderOutput;
 import br.com.order.application.usecase.UseCase;
-import br.com.order.domain.core.domain.entities.Order;
 import br.com.order.domain.core.domain.entities.Product;
-import br.com.order.domain.gateway.OrderGateway;
 import br.com.order.domain.gateway.ProductGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
