@@ -83,6 +83,18 @@ class OrderFacadeTest {
     }
 
     @Test
+    void testCreateOrderNullCalculate() {
+        when(createOrderUseCase.execute(Mockito.any())).thenReturn(Optional.empty());
+
+        OrderOutput result = orderFacade.create(Mockito.any());
+
+        assertNull(result);
+        verify(createOrderUseCase, times(1)).execute(Mockito.any());
+        verify(calculateTotalOrderUseCase, times(0)).execute(Mockito.any());
+        verify(rabbitTemplate, times(0)).convertAndSend(Mockito.anyString(), Mockito.anyString(), Mockito.any(OrderRabbitOutput.class));
+    }
+
+    @Test
     void testUpdateOrder() {
         when(editOrderUseCase.execute(Mockito.any())).thenReturn(Optional.of(order));
 
