@@ -46,11 +46,5 @@ public class OrderController {
     public ResponseEntity<OrderOutput> edit(@PathVariable final Long id, @RequestBody OrderInput orderInput) {
         return ResponseEntity.ok().body(orderFacade.update(new OrderInput(id, orderInput.products())));
     }
-
-    @PutMapping("/update-status/{id}")
-    public ResponseEntity<OrderOutput> updateStatus(@PathVariable final Long id) {
-        return ResponseEntity.ok().body(orderFacade.updateStatusOrder(id));
-    }
-
 }
 

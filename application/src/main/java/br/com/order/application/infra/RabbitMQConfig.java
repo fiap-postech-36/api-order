@@ -14,29 +14,41 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String QUEUE_NAME = "order_direct_queue";
-    public static final String EXCHANGE_NAME = "order_direct_exchange";
-    public static final String KEY_NAME = "order_direct_key";
-    public static final String RECIVED_ORDER_QUEUE_NAME = "recived_order_direct_queue";
+    public static final String ORDER_EXCHANGE_NAME = "order_direct_exchange";
+    public static final String ORDER_PAYMENT_QUEUE_NAME = "order_payment_direct_queue";
+    public static final String ORDER_PAYMENT_KEY_NAME = "order_payment_direct_key";
+    public static final String ORDER_KITCHEN_QUEUE_NAME = "order_kitchen_direct_queue";
+    public static final String ORDER_KITCHEN_KEY_NAME = "order_kitchen_direct_key";
+    public static final String KITCHEN_ORDER_QUEUE_NAME = "kitchen_order_direct_queue";
 
     @Bean
     public Queue queue() {
-        return new Queue(QUEUE_NAME);
+        return new Queue(ORDER_PAYMENT_QUEUE_NAME);
+    }
+
+    @Bean
+    public Queue kitchenQueue() {
+        return new Queue(ORDER_KITCHEN_QUEUE_NAME);
     }
 
     @Bean
     public Queue recivedOrderQueue() {
-        return new Queue(RECIVED_ORDER_QUEUE_NAME);
+        return new Queue(KITCHEN_ORDER_QUEUE_NAME);
     }
 
     @Bean
     public DirectExchange exchange() {
-        return new DirectExchange(EXCHANGE_NAME);
+        return new DirectExchange(ORDER_EXCHANGE_NAME);
     }
 
     @Bean
     public Binding binding(Queue queue, DirectExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(KEY_NAME);
+        return BindingBuilder.bind(queue).to(exchange).with(ORDER_PAYMENT_KEY_NAME);
+    }
+
+    @Bean
+    public Binding kitchenBinding(Queue kitchenQueue, DirectExchange exchange) {
+        return BindingBuilder.bind(kitchenQueue).to(exchange).with(ORDER_KITCHEN_KEY_NAME);
     }
 
     @Bean

@@ -23,7 +23,6 @@ public class OrderFacade {
 
     private final CreateOrderUseCase createOrderUseCase;
     private final EditOrderUseCase editOrderUseCase;
-    private final OrderStatusUseCase orderStatusUseCase;
     private final FilterOrderUseCase filterOrderUseCase;
     private final DeleteOrderUseCase deleteOrderUseCase;
     private final GetByIdOrderUseCase getByIdOrderUseCase;
@@ -40,19 +39,14 @@ public class OrderFacade {
     private void notificateCreatedOrder(OrderOutput orderOutput) {
         if (orderOutput != null) {
             BigDecimal valorTotal = calculateTotalOrderUseCase.execute(orderOutput).orElseThrow(RuntimeException::new);
-            rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.KEY_NAME, new OrderRabbitOutput(orderOutput.id(), valorTotal));
+            rabbitTemplate.convertAndSend(RabbitMQConfig.ORDER_EXCHANGE_NAME, RabbitMQConfig.ORDER_PAYMENT_KEY_NAME, new OrderRabbitOutput(orderOutput.id(), valorTotal));
+            rabbitTemplate.convertAndSend(RabbitMQConfig.ORDER_EXCHANGE_NAME, RabbitMQConfig.ORDER_KITCHEN_KEY_NAME, orderOutput.id());
         }
     }
 
     public OrderOutput update(final OrderInput orderInput) {
         final var customerOutPut = editOrderUseCase.execute(orderInput);
         return OrderInputOutputMapper.INSTANCE.orderToOrderResponse(customerOutPut.orElse(null));
-    }
-
-    public OrderOutput updateStatusOrder(final Long order) {
-        final var orderResponse = getOrderById(order);
-        final var orderOutPut = orderStatusUseCase.execute(orderResponse);
-        return OrderInputOutputMapper.INSTANCE.orderToOrderResponse(orderOutPut.orElse(null));
     }
 
     public Page<OrderOutput> filter(final FilterInput filterInput) {

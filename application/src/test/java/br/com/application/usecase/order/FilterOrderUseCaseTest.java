@@ -3,7 +3,6 @@ package br.com.application.usecase.order;
 import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.usecase.order.FilterOrderUseCase;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.domain.gateway.OrderGateway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,16 +38,16 @@ class FilterOrderUseCaseTest {
     void testExecute() {
         // Arrange
         FilterInput filterInput = new FilterInput(Map.of("status", "PENDING"));
-        Order order1 = new Order(2L, OrderStatus.CREATED, LocalDateTime.now(), LocalDateTime.now(),  List.of());
-        Order order2 = new Order(3L, OrderStatus.CREATED, LocalDateTime.now(), LocalDateTime.now(),  List.of());
+        Order order1 = new Order(2L, LocalDateTime.now(), LocalDateTime.now(),  List.of());
+        Order order2 = new Order(3L, LocalDateTime.now(), LocalDateTime.now(),  List.of());
         List<Order> orderList = List.of(order1, order2);
-        when(orderGateway.findByPriority()).thenReturn(orderList);
+        when(orderGateway.findAll()).thenReturn(orderList);
 
         // Act
         Optional<Page<Order>> result = filterOrderUseCase.execute(filterInput);
 
         // Assert
-        verify(orderGateway).findByPriority(); // Verifica se o findByPriority foi chamado
+        verify(orderGateway).findAll(); // Verifica se o findByPriority foi chamado
         assertTrue(result.isPresent()); // Verifica se o resultado está presente
         assertEquals(new PageImpl<>(orderList), result.get()); // Verifica se o conteúdo do Page é o esperado
         assertEquals(2, result.get().getContent().size()); // Verifica o tamanho da lista de pedidos no Page

@@ -2,7 +2,6 @@ package br.com.application.usecase.order;
 
 import br.com.order.application.usecase.order.GetByIdOrderUseCase;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.domain.gateway.OrderGateway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 class GetByIdOrderUseCaseTest {
 
@@ -34,7 +34,7 @@ class GetByIdOrderUseCaseTest {
     void testExecute_whenOrderExists() {
         // Arrange
         Long id = 1L;
-        Order order = new Order(2L, OrderStatus.CREATED, LocalDateTime.now(), LocalDateTime.now(),  List.of());
+        Order order = new Order(2L, LocalDateTime.now(), LocalDateTime.now(), List.of());
         when(orderGateway.findById(id)).thenReturn(Optional.of(order));
 
         // Act
