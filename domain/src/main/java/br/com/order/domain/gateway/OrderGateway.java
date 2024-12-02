@@ -16,11 +16,5 @@ public interface OrderGateway {
 
     Optional<Order> findById(final Long id);
 
-    Collection<Order> findByStatus(final String status);
-
     Collection<Order> findAll();
-
-    Collection<Order> filter(final String status);
-
-    Collection<Order> findByPriority();
 }

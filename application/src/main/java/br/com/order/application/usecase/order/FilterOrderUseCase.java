@@ -20,7 +20,7 @@ public class FilterOrderUseCase implements UseCase<FilterInput, Page<Order>> {
 
     @Override
     public Optional<Page<Order>> execute(final FilterInput filterInput) {
-        final List<Order> orders = (List<Order>) orderGateway.findByPriority();
+        final List<Order> orders = (List<Order>) orderGateway.findAll();
         return Optional.of(new PageImpl<>(orders));
     }
 }

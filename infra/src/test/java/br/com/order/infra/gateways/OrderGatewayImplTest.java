@@ -1,9 +1,7 @@
 package br.com.order.infra.gateways;
 
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.infra.entity.OrderEntity;
-import br.com.order.infra.gateways.OrderGatewayImpl;
 import br.com.order.infra.mapper.OrderMapper;
 import br.com.order.infra.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,9 +36,8 @@ class OrderGatewayImplTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        order = new Order(3L, OrderStatus.RECEIVED, LocalDateTime.now(), LocalDateTime.now(), List.of());
+        order = new Order(3L, LocalDateTime.now(), LocalDateTime.now(), List.of());
         orderEntity = new OrderEntity();
-        orderEntity.setStatus(OrderStatus.RECEIVED);
     }
 
     @Test
@@ -63,44 +60,11 @@ class OrderGatewayImplTest {
     }
 
     @Test
-    void testFindByStatus() {
-        String status = "RECEIVED";
-        when(orderRepository.findByStatus(status)).thenReturn(List.of(orderEntity));
-        when(mapper.orderEntityToOrder(orderEntity)).thenReturn(order);
-
-        Collection<Order> orders = orderGateway.findByStatus(status);
-
-        assertEquals(1, orders.size());
-    }
-
-    @Test
     void testFindAll() {
         when(orderRepository.findAll()).thenReturn(List.of(orderEntity));
         when(mapper.orderEntityToOrder(orderEntity)).thenReturn(order);
 
         Collection<Order> orders = orderGateway.findAll();
-
-        assertEquals(1, orders.size());
-    }
-
-    @Test
-    void testFindByPriority() {
-        List<OrderStatus> statuses = List.of(OrderStatus.IN_PREPARATION, OrderStatus.RECEIVED, OrderStatus.READY);
-        when(orderRepository.getByPriority(statuses)).thenReturn(List.of(orderEntity));
-        when(mapper.orderEntityToOrder(orderEntity)).thenReturn(order);
-
-        Collection<Order> orders = orderGateway.findByPriority();
-
-        assertEquals(1, orders.size());
-    }
-
-    @Test
-    void testFilter() {
-        String status = "RECEIVED";
-        when(orderRepository.findByStatus(status)).thenReturn(List.of(orderEntity));
-        when(mapper.orderEntityToOrder(orderEntity)).thenReturn(order);
-
-        Collection<Order> orders = orderGateway.filter(status);
 
         assertEquals(1, orders.size());
     }

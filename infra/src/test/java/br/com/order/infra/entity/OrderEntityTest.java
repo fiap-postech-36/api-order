@@ -1,6 +1,5 @@
 package br.com.order.infra.entity;
 
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,7 +31,6 @@ public class OrderEntityTest {
     @Test
     void testGettersAndSetters() {
         orderEntity.setId(1L);
-        orderEntity.setStatus(OrderStatus.IN_PREPARATION);
         LocalDateTime receivedAt = LocalDateTime.now();
         LocalDateTime finishedAt = LocalDateTime.now().plusHours(1);
         orderEntity.setReceivedAt(receivedAt);
@@ -40,7 +38,6 @@ public class OrderEntityTest {
         orderEntity.setProducts(List.of(product1, product2));
 
         assertEquals(1L, orderEntity.getId());
-        assertEquals(OrderStatus.IN_PREPARATION, orderEntity.getStatus());
         assertEquals(receivedAt, orderEntity.getReceivedAt());
         assertEquals(finishedAt, orderEntity.getFinishedAt());
         assertEquals(2, orderEntity.getProducts().size());
@@ -53,7 +50,6 @@ public class OrderEntityTest {
         OrderEntity newOrderEntity = new OrderEntity();
 
         assertNull(newOrderEntity.getId());
-        assertNull(newOrderEntity.getStatus());
         assertNull(newOrderEntity.getReceivedAt());
         assertNull(newOrderEntity.getFinishedAt());
         assertNull(newOrderEntity.getProducts());
@@ -65,10 +61,9 @@ public class OrderEntityTest {
         LocalDateTime finishedAt = LocalDateTime.now().plusHours(1);
         List<ProductEntity> products = List.of(product1, product2);
 
-        OrderEntity newOrderEntity = new OrderEntity(1L, OrderStatus.CREATED, receivedAt, finishedAt, products);
+        OrderEntity newOrderEntity = new OrderEntity(1L, receivedAt, finishedAt, products);
 
         assertEquals(1L, newOrderEntity.getId());
-        assertEquals(OrderStatus.CREATED, newOrderEntity.getStatus());
         assertEquals(receivedAt, newOrderEntity.getReceivedAt());
         assertEquals(finishedAt, newOrderEntity.getFinishedAt());
         assertEquals(2, newOrderEntity.getProducts().size());

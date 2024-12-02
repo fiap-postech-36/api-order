@@ -12,7 +12,7 @@ public class NotificationService {
 
     private final OrderRecivedUseCase orderRecivedUseCase;
 
-    @RabbitListener(queues = RabbitMQConfig.RECIVED_ORDER_QUEUE_NAME)
+    @RabbitListener(queues = RabbitMQConfig.KITCHEN_ORDER_QUEUE_NAME)
     public void receiveMessage(String orderId) {
         int orderIdInt = Integer.parseInt(orderId);
         orderRecivedUseCase.execute(orderIdInt);

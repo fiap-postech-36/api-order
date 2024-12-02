@@ -6,7 +6,6 @@ import br.com.order.application.inout.input.FilterInput;
 import br.com.order.application.inout.input.OrderInput;
 import br.com.order.application.inout.output.OrderOutput;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -41,7 +40,7 @@ class OrderControllerTest {
 
     @Test
     void testFindAll() {
-        Page<OrderOutput> orderOutputPage = new PageImpl<>(Collections.singletonList(new OrderOutput(1L, OrderStatus.CREATED, LocalDateTime.now(), Collections.emptyList())));
+        Page<OrderOutput> orderOutputPage = new PageImpl<>(Collections.singletonList(new OrderOutput(1L, LocalDateTime.now(), Collections.emptyList())));
         when(orderFacade.filter(any(FilterInput.class))).thenReturn(orderOutputPage);
 
         ResponseEntity<Page<OrderOutput>> response = orderController.findAll(eq(Map.of("status", "PENDING")));
@@ -55,7 +54,7 @@ class OrderControllerTest {
     @Test
     void testCreate() {
         OrderInput orderInput = new OrderInput(2L, Collections.singletonList(1L));
-        OrderOutput orderOutput = new OrderOutput(1L, OrderStatus.CREATED, LocalDateTime.now(), Collections.emptyList());
+        OrderOutput orderOutput = new OrderOutput(1L, LocalDateTime.now(), Collections.emptyList());
         when(orderFacade.create(eq(orderInput))).thenReturn(orderOutput);
 
         ResponseEntity<OrderOutput> response = orderController.create(orderInput);
@@ -79,7 +78,7 @@ class OrderControllerTest {
     @Test
     void testGetById() {
         Long orderId = 1L;
-        OrderOutput orderOutput = new OrderOutput(1L, OrderStatus.CREATED, LocalDateTime.now(), Collections.emptyList());
+        OrderOutput orderOutput = new OrderOutput(1L, LocalDateTime.now(), Collections.emptyList());
         when(orderFacade.get(eq(orderId))).thenReturn(orderOutput);
 
         ResponseEntity<OrderOutput> response = orderController.getById(orderId);
@@ -93,7 +92,7 @@ class OrderControllerTest {
     void testEdit() {
         Long orderId = 1L;
         OrderInput orderInput = new OrderInput(3L, Collections.singletonList(1L));
-        OrderOutput orderOutput = new OrderOutput(1L, OrderStatus.CREATED, LocalDateTime.now(), Collections.emptyList());
+        OrderOutput orderOutput = new OrderOutput(1L, LocalDateTime.now(), Collections.emptyList());
         when(orderFacade.update(any(OrderInput.class))).thenReturn(orderOutput);
 
         ResponseEntity<OrderOutput> response = orderController.edit(orderId, orderInput);
@@ -102,18 +101,4 @@ class OrderControllerTest {
         assertEquals(orderOutput, response.getBody());
         verify(orderFacade, times(1)).update(any(OrderInput.class));
     }
-
-    @Test
-    void testUpdateStatus() {
-        Long orderId = 1L;
-        OrderOutput orderOutput = new OrderOutput(1L, OrderStatus.READY, LocalDateTime.now(), Collections.emptyList());
-        when(orderFacade.updateStatusOrder(eq(orderId))).thenReturn(orderOutput);
-
-        ResponseEntity<OrderOutput> response = orderController.updateStatus(orderId);
-
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(orderOutput, response.getBody());
-        verify(orderFacade, times(1)).updateStatusOrder(eq(orderId));
-    }
-
 }

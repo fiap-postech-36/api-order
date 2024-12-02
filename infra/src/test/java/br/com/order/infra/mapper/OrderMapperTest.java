@@ -2,7 +2,6 @@ package br.com.order.infra.mapper;
 
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.domain.core.domain.entities.Product;
 import br.com.order.infra.entity.OrderEntity;
 import br.com.order.infra.entity.ProductEntity;
@@ -30,7 +29,7 @@ public class OrderMapperTest {
     void testOrderEntityToOrder() {
         // Configuração do OrderEntity para teste
         ProductEntity productEntity = new ProductEntity(1L, "Product A", "Description A", "urlA", BigDecimal.valueOf(10.0), Category.ACOMPANHAMENTO);
-        OrderEntity orderEntity = new OrderEntity(1L, OrderStatus.RECEIVED, LocalDateTime.now(), LocalDateTime.now(), List.of(productEntity));
+        OrderEntity orderEntity = new OrderEntity(1L, LocalDateTime.now(), LocalDateTime.now(), List.of(productEntity));
 
         // Execução do mapeamento
         Order order = mapper.orderEntityToOrder(orderEntity);
@@ -38,7 +37,6 @@ public class OrderMapperTest {
         // Verificações
         assertNotNull(order);
         assertEquals(orderEntity.getId(), order.getId());
-        assertEquals(orderEntity.getStatus(), order.getStatus());
         assertEquals(orderEntity.getProducts().size(), order.getProducts().size());
         assertEquals(orderEntity.getProducts().get(0).getName(), order.getProducts().get(0).getName());
     }
@@ -47,7 +45,7 @@ public class OrderMapperTest {
     void testOrderToOrderEntity() {
         // Configuração do Order para teste
         Product product = new Product(1L, "Product A", "Description A", "urlA", BigDecimal.valueOf(10.0), Category.ACOMPANHAMENTO);
-        Order order = new Order(1L, OrderStatus.RECEIVED, LocalDateTime.now(), LocalDateTime.now(), List.of(product));
+        Order order = new Order(1L, LocalDateTime.now(), LocalDateTime.now(), List.of(product));
 
         // Execução do mapeamento
         OrderEntity orderEntity = mapper.orderToOrderEntity(order);
@@ -55,7 +53,6 @@ public class OrderMapperTest {
         // Verificações
         assertNotNull(orderEntity);
         assertEquals(order.getId(), orderEntity.getId());
-        assertEquals(order.getStatus(), orderEntity.getStatus());
         assertEquals(order.getProducts().size(), orderEntity.getProducts().size());
         assertEquals(order.getProducts().get(0).getName(), orderEntity.getProducts().get(0).getName());
     }

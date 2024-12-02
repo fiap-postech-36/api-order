@@ -1,7 +1,6 @@
 package br.com.order.domain.gateway;
 
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,7 +26,7 @@ class OrderGatewayTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        order = new Order(2L, OrderStatus.CREATED, LocalDateTime.now(), LocalDateTime.now(), List.of());
+        order = new Order(2L, LocalDateTime.now(), LocalDateTime.now(), List.of());
     }
 
     @Test
@@ -73,17 +72,6 @@ class OrderGatewayTest {
     }
 
     @Test
-    void testFindByStatus() {
-        when(orderGateway.findByStatus("PENDING")).thenReturn(Collections.singletonList(order));
-
-        Collection<Order> orders = orderGateway.findByStatus("PENDING");
-
-        assertFalse(orders.isEmpty());
-        assertEquals(1, orders.size());
-        verify(orderGateway, times(1)).findByStatus("PENDING");
-    }
-
-    @Test
     void testFindAll() {
         when(orderGateway.findAll()).thenReturn(Collections.singletonList(order));
 
@@ -92,28 +80,6 @@ class OrderGatewayTest {
         assertFalse(orders.isEmpty());
         assertEquals(1, orders.size());
         verify(orderGateway, times(1)).findAll();
-    }
-
-    @Test
-    void testFilter() {
-        when(orderGateway.filter("PENDING")).thenReturn(Collections.singletonList(order));
-
-        Collection<Order> orders = orderGateway.filter("PENDING");
-
-        assertFalse(orders.isEmpty());
-        assertEquals(1, orders.size());
-        verify(orderGateway, times(1)).filter("PENDING");
-    }
-
-    @Test
-    void testFindByPriority() {
-        when(orderGateway.findByPriority()).thenReturn(Collections.singletonList(order));
-
-        Collection<Order> orders = orderGateway.findByPriority();
-
-        assertFalse(orders.isEmpty());
-        assertEquals(1, orders.size());
-        verify(orderGateway, times(1)).findByPriority();
     }
 }
 

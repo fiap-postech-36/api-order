@@ -7,7 +7,6 @@ import br.com.order.application.inout.output.OrderRabbitOutput;
 import br.com.order.application.usecase.order.*;
 import br.com.order.domain.core.domain.entities.Category;
 import br.com.order.domain.core.domain.entities.Order;
-import br.com.order.domain.core.domain.entities.OrderStatus;
 import br.com.order.domain.core.domain.entities.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,8 +34,6 @@ class OrderFacadeTest {
     @Mock
     private EditOrderUseCase editOrderUseCase;
     @Mock
-    private OrderStatusUseCase orderStatusUseCase;
-    @Mock
     private FilterOrderUseCase filterOrderUseCase;
     @Mock
     private DeleteOrderUseCase deleteOrderUseCase;
@@ -58,11 +55,10 @@ class OrderFacadeTest {
                 .id(orderId)
                 .finishedAt(LocalDateTime.now())
                 .receivedAt(LocalDateTime.now())
-                .status(OrderStatus.CREATED)
                 .products(Arrays.asList(Product.builder()
-                                .category(Category.ACOMPANHAMENTO)
-                                .description("X-TUDO")
-                                .price(BigDecimal.valueOf(10))
+                        .category(Category.ACOMPANHAMENTO)
+                        .description("X-TUDO")
+                        .price(BigDecimal.valueOf(10))
                         .build()))
                 .build();
 
@@ -102,18 +98,6 @@ class OrderFacadeTest {
 
         assertNotNull(result);
         verify(editOrderUseCase, times(1)).execute(Mockito.any());
-    }
-
-    @Test
-    void testUpdateStatusOrder() {
-        when(getByIdOrderUseCase.execute(Mockito.any())).thenReturn(Optional.of(order));
-        when(orderStatusUseCase.execute(Mockito.any())).thenReturn(Optional.of(order));
-
-        OrderOutput result = orderFacade.updateStatusOrder(orderId);
-
-        assertNotNull(result);
-        verify(getByIdOrderUseCase, times(1)).execute(orderId);
-        verify(orderStatusUseCase, times(1)).execute(order);
     }
 
     @Test
