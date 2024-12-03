@@ -1,4 +1,4 @@
-# API de Autoatendimento para Restaurante
+# API de Order Autoatendimento para Restaurante
 ### Descrição
 Este projeto tem como objetivo atender aos requisitos do Tech Challenge da pós-graduação em Software Architecture da FIAP. O desafio consiste em desenvolver uma API de autoatendimento para autoatendimento ao cliente de um restaurante.
 
@@ -70,14 +70,32 @@ Desenho da Solução
 Desenho do K8S
 ![img_1.png](/docs/desenho_infra_K8S_img.jpeg)
 
+[Old]
 Link do video com a explicação do desenho da arquitetura utilizando Kubernetes.
 https://youtu.be/w5A6DyLLNmc
-
 Link com a explicação da estrutura da aplicação: https://www.youtube.com/watch?v=PgkWulL6RvM
-
 Link com a explicação funcional dos testes da API: https://www.youtube.com/watch?v=2KRZGGU2W9c
-
 Link com a playlist dos videos: https://www.youtube.com/watch?v=2KRZGGU2W9c&list=PLx18bveEbN77hQnX9I_TxCuJGVeK6LTVj
+
+## ⚠️ Diretorio com as evidencias dos tests e print's ⚠️:
+
+    Application: application/target/site/jacoco/index.html
+![Application-test.png](docs%2Ftestes%2FApplication-test.png)
+
+
+    Domain: domain/target/site/jacoco/index.html
+![Domain-test.png](docs%2Ftestes%2FDomain-test.png)
+
+
+    Infra: infra/target/site/jacoco/index.html
+![Infra-test.png](docs%2Ftestes%2FInfra-test.png)
+
+## Link do Sonar com o dashboard das coberturas de testes:
+https://sonarcloud.io/summary/new_code?id=fiap-postech-36_api-order
+
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+
 
 ## 🔗 Links
 [![miro](https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white)](https://miro.com/app/board/uXjVKM_0wdE=/?share_link_id=239546560997)

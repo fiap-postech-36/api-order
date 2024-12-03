@@ -1,0 +1,16 @@
+
+#Dir relatorio testes
+Application: application/target/site/jacoco/index.html
+
+#Dir relatorio testes
+Domain: domain/target/site/jacoco/index.html
+
+#Dir relatorio testes
+Infra: infra/target/site/jacoco/index.html
+
+
+###Link do Sonar com o dashboard das coberturas de testes:
+    https://sonarcloud.io/summary/new_code?id=fiap-postech-36_api-order
+
+
+
