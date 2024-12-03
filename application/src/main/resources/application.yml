@@ -4,10 +4,10 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:postgres}
   rabbitmq:
-    host: localhost
+    host: ${RABBIT_HOST:localhost}
     port: 5672
-    username: ulysses
-    password: senha123
+    username: ${RABBIT_USER:ulysses}
+    password: ${RABBIT_PASSWORD:senha123}
   flyway:
     locations: classpath:db/migration
     baselineOnMigrate: false
